@@ -1,5 +1,5 @@
 const Types = require('./types')
-const {create, fromBuffer, toBuffer} = require('./alaexplorerjs-fcbuffer-v2.0.0')
+const {create, fromBuffer, toBuffer} = require('./alafcbuffer20')
 
 /**
   @typedef {object} SerializerConfig

@@ -5,7 +5,7 @@ const ByteBuffer = require('bytebuffer')
 const Fcbuffer = require('.')
 const Types = require('./types')
 const Struct = require('./struct')
-const {create} = require('./alaexplorerjs-fcbuffer-v2.0.0')
+const {create} = require('./alafcbuffer20')
 
 describe('API', function () {
   it('bytes', function () {

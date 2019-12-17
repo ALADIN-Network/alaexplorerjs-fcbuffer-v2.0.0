@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/ALADIN-Network/alaexplorerjs-alaexplorerjs-fcbuffer-v2.0.0.svg?branch=master)](https://travis-ci.org/ALADIN-Network/alaexplorerjs-alaexplorerjs-fcbuffer-v2.0.0)
-[![Coverage Status](https://coveralls.io/repos/github/ALADIN-Network/alaexplorerjs-alaexplorerjs-fcbuffer-v2.0.0/badge.svg?branch=master)](https://coveralls.io/github/ALADIN-Network/alaexplorerjs-alaexplorerjs-fcbuffer-v2.0.0?branch=master)
-[![NPM](https://img.shields.io/npm/v/alaexplorerjs-fcbuffer-v2.0.0.svg)](https://www.npmjs.org/package/alaexplorerjs-fcbuffer-v2.0.0)
+[![Build Status](https://travis-ci.org/ALADIN-Network/alaexplorerjs-alafcbuffer20.svg?branch=master)](https://travis-ci.org/ALADIN-Network/alaexplorerjs-alafcbuffer20)
+[![Coverage Status](https://coveralls.io/repos/github/ALADIN-Network/alaexplorerjs-alafcbuffer20/badge.svg?branch=master)](https://coveralls.io/github/ALADIN-Network/alaexplorerjs-alafcbuffer20?branch=master)
+[![NPM](https://img.shields.io/npm/v/alafcbuffer20.svg)](https://www.npmjs.org/package/alafcbuffer20)
 
 # FC Buffer
 
@@ -28,7 +28,7 @@ added.  The definition format may change.
 # Example
 
 ```javascript
-Fcbuffer = require('alaexplorerjs-fcbuffer-v2.0.0') // or: Fcbuffer = require('./src')
+Fcbuffer = require('alafcbuffer20') // or: Fcbuffer = require('./src')
 
 assert = require('assert')
 
@@ -47,22 +47,22 @@ definitions = {
 }
 
 // Warning: Do not use {defaults: true} in production
-alaexplorerjs-fcbuffer-v2.0.0 = Fcbuffer(definitions, {defaults: true})
+alafcbuffer20 = Fcbuffer(definitions, {defaults: true})
 
 // Check for errors anywhere in the definitions structure
-assert(alaexplorerjs-fcbuffer-v2.0.0.errors.length === 0, alaexplorerjs-fcbuffer-v2.0.0.errors)
+assert(alafcbuffer20.errors.length === 0, alafcbuffer20.errors)
 
 // If there are no errors, you'll get your structs
-var {message} = alaexplorerjs-fcbuffer-v2.0.0.structs
+var {message} = alafcbuffer20.structs
 
 // Create JSON serializable object
 // returns { from: '', to: '', cc: [ '' ], type: '', data: '' }
 message.toObject()
 
-// Convert JSON into a more compact alaexplorerjs-fcbuffer-v2.0.0 serializable object
+// Convert JSON into a more compact alafcbuffer20 serializable object
 msg = { from: 'jc', to: 'dan', cc: [ 'abc' ], type: '', data: '0f0f0f' }
 
-// Serialize alaexplorerjs-fcbuffer-v2.0.0 object into a single binary buffer
+// Serialize alafcbuffer20 object into a single binary buffer
 buf = Fcbuffer.toBuffer(message, msg)
 // returns <Buffer 02 6a 63 07 63 68 61 72 6c 65 73 01 03 61 62 63 00 03 0f 0f 0f>
 
@@ -74,7 +74,7 @@ assert.deepEqual(msg, obj)
 
 // A definition may extend and define other definitions.  This works in the initial
 // definition or later via the extend function.
-fcbuffer2 = alaexplorerjs-fcbuffer-v2.0.0.extend({
+fcbuffer2 = alafcbuffer20.extend({
     permission_name: 'fixed_string16',
     account_permission: {
         fields: {
